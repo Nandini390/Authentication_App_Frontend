@@ -1,14 +1,11 @@
 import './App.css'
+import FuturisticAuthHome from './components/home/FuturisticAuthHome.tsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <div className='p-10'>
-      <h1 className="text-3xl font-bold">Hello, auth frontend app</h1>
+    <div>
+        <FuturisticAuthHome />
     </div>
-    </>
   )
 }
 
