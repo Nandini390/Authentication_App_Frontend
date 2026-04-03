@@ -12,6 +12,7 @@ import type RegisterData from "@/models/RegisterData";
 import { registerUser } from "@/services/AuthService";
 import { Spinner } from "@/components/ui/spinner";
 import { Alert, AlertTitle } from "@/components/ui/alert";
+import OAuth2Buttons from "@/components/ui/OAuth2Buttons";
 
 
 function signup() {
@@ -142,9 +143,7 @@ function signup() {
             </div>
 
             {/* Google Auth */}
-            <Button variant="outline" className="w-full h-11 text-sm">
-              Continue with Google
-            </Button>
+              <OAuth2Buttons />
 
             {/* Footer */}
             <p className="text-center text-sm text-gray-500">

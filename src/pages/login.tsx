@@ -13,6 +13,7 @@ import { Alert, AlertTitle } from "@/components/ui/alert";
 import { Spinner } from "@/components/ui/spinner";
 import { set } from "date-fns";
 import useAuth from "@/auth/store";
+import OAuth2Buttons from "@/components/ui/OAuth2Buttons";
 
 function login() {
     const [loginData, setLoginData] = useState<LoginData>({
@@ -61,7 +62,7 @@ function login() {
 
         }catch(error:any){
             console.log(error);
-            toast.error("Login failed. Please check your credentials and try again.");
+            // toast.error("Login failed. Please check your credentials and try again.");
             if(error.status==400){
                 setError(error);
             }else{
@@ -147,14 +148,12 @@ function login() {
             {/* Divider */}
             <div className="flex items-center gap-3">
               <div className="flex-1 h-px bg-gray-300 dark:bg-white/10" />
-              <span className="text-xs text-gray-500">or</span>
+              <span className="text-xs text-gray-500">OR</span>
               <div className="flex-1 h-px bg-gray-300 dark:bg-white/10" />
             </div>
 
             {/* Google Auth */}
-            <Button variant="outline" className="w-full h-11 text-sm">
-              Continue with Google
-            </Button>
+            <OAuth2Buttons />
 
             {/* Footer */}
             <p className="text-center text-sm text-gray-500">

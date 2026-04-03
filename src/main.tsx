@@ -8,6 +8,8 @@ import Signup from './pages/signup.tsx'
 import Userlayout from './pages/users/userlayout.tsx'
 import Userhome from './pages/users/Userhome.tsx'
 import UserProfile from './pages/users/userProfile.tsx'
+import OAuthSuccess from './pages/OAuthSuccess.tsx'
+import OAuthFailure from './pages/OAuthFailure.tsx'
 
 
 
@@ -21,7 +23,10 @@ createRoot(document.getElementById('root')!).render(
         <Route path='/dashboard' element={<Userlayout/>}>
           <Route index element={<Userhome/>} />
           <Route path="profile" element={<UserProfile/>} />
+          {/*......*/}
         </Route>
+        <Route path='oauth/success' element={<OAuthSuccess/>} />
+        <Route path='oauth/failure' element={<OAuthFailure/>} />
       </Route>
    </Routes>
  </BrowserRouter>
