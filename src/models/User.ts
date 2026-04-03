@@ -1,10 +1,10 @@
 export default interface User {
-    id: String;
-    email: String;
-    name?: String;
+    id: string;
+    email: string;
+    name?: string;
     enabled: boolean;
-    image?: String;
-    updatedAt?: String;
-    createdAt?: String;
-    provider: String;
+    image?: string;
+    updatedAt?: string;
+    createdAt?: string;
+    provider: string;
 }

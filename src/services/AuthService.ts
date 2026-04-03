@@ -3,6 +3,7 @@ import apiClient from "@/config/ApiClient"
 import { LogIn } from "lucide-react";
 import type LoginData from "@/models/LoginData";
 import type LoginResponseData from "@/models/LoginResponseData";
+import type User from "@/models/User";
 
 export const registerUser =async (signupData: RegisterData) => {
    //api call to server to save data
@@ -19,3 +20,15 @@ export const logoutUser = async () => {
     const response=await apiClient.post("/auth/logout");
     return response.data;
 }
+
+//get current login user
+export const getCurrentUser = async (emailId: string | undefined) => {
+  const response = await apiClient.get<User>(`/users/email/${emailId}`);
+  return response.data;
+};
+
+//refresh token
+export const refreshToken = async () => {
+  const response = await apiClient.post<LoginResponseData>(`/auth/refresh`);
+  return response.data;
+};

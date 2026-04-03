@@ -1,8 +1,8 @@
 import type User from "./User";
 
 export default interface LoginResponseData{
-    accessToken: String;
+    accessToken: string;
     user: User;
-    refreshToken: String;
+    refreshToken: string;
     expiresIn: number;
 }
